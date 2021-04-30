@@ -18,8 +18,6 @@ class App{
                 $controller->{$url[1]};
 
             }
-        }else{
-            $controller = new Error();
         }
 
     }
