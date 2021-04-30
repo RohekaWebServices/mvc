@@ -1,4 +1,5 @@
 <?php
+require_once 'controllers/error.php';
 class App{
     function __construct(){
         echo "<p>Nueva App</p>";
@@ -9,9 +10,13 @@ class App{
         //var_dump($url); // comentario random
 
         $archivoController = '/controllers/' . $url[0] . '.php';
+        if(file_exists($archivoController)){
+            require_once $archivoController;
+            $controller = new $url[0];
+        }else{
+            $controller = new Error();
+        }
 
-        require_once '$archivoController';
-        $controller = new $url[0];
     }
 }
 ?>
