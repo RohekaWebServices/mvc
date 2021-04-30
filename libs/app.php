@@ -1,5 +1,5 @@
 <?php
-require_once 'controllers/error.php';
+require_once 'controllers/errores.php';
 class App{
     function __construct(){
         echo "<p>Nueva App</p>";
@@ -18,6 +18,8 @@ class App{
                 $controller->{$url[1]};
 
             }
+        }else{
+            $controller = new Errores();
         }
 
     }
