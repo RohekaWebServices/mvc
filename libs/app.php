@@ -9,7 +9,7 @@ class App{
         $url = explode('/', $url);
         //var_dump($url); // comentario random
 
-        $archivoController = '/controllers/' . $url[0] . '.php';
+        $archivoController = 'controllers/' . $url[0] . '.php';
         if(file_exists($archivoController)){
             require_once $archivoController;
             $controller = new $url[0];
